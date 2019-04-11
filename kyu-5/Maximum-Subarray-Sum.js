@@ -14,13 +14,15 @@ function maxSequence(arr) {
   const result = [];
   for (let i = 0; i <= array.length - 1; i += 1) {
     let sum = array[i];
-    for (let j = i + 1; j <= array.length - 1; j += 1) {
+    for (let j = i + 1; j <= array.length; j += 1) {
       result.push(array[i]);
-      sum += array[j];
-      result.push(sum);
+      if (Number.isInteger(array[j])) {
+        sum += array[j];
+        result.push(sum);
+      }
     }
   }
   return result.sort((a, b) => a - b)[result.length - 1] >= 0 ? result.sort((a, b) => a - b)[result.length - 1] : 0;
 }
 
-console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+console.log(maxSequence([3, 4, -3, 2, -9, -9, -4, -2, 32]));

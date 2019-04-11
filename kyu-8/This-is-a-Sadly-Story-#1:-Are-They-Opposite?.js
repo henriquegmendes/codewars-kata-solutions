@@ -10,12 +10,10 @@
 // isOpposite("AB","Ab") should return false;
 // isOpposite("","") should return false;
 
-function isOpposite(s1,s2){
-  // TESTAR SE ELAS SAO IGUAIS (RETORNA FALSO) E SE OS CARACTERES NAO SAO EXATAMENTE IGUAIS (FILTRO INICIAL)
+function isOpposite(s1, s2) {
   if (s1 === s2 || s1.toLowerCase() !== s2.toLowerCase()) {
     return false;
   }
-  // COMPARAR CARACTERE POR CARACTERE. SE FOREM IGUAIS RETORNA FALSO
   for (let i = 0; i < s1.length; i += 1) {
     if (s1[i] === s2[i]) {
       return false;

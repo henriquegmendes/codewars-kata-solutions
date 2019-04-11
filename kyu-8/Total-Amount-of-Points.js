@@ -15,14 +15,14 @@
 
 function points(games) {
   let count = 0;
-  for (i = 0; i < games.length; i += 1) {
-    if (parseInt(games[i][0]) > parseInt(games[i][2])) {
+  for (let i = 0; i < games.length; i += 1) {
+    if (parseInt(games[i][0], 10) > parseInt(games[i][2], 10)) {
       count += 3;
-    } else if (parseInt(games[i][0]) === parseInt(games[i][2])) {
+    } else if (parseInt(games[i][0], 10) === parseInt(games[i][2], 10)) {
       count += 1;
-      }
+    }
   }
   return count;
 }
 
-console.log(points(['1:1','2:2','3:3','4:4','2:2','3:3','4:4','3:3','4:4','4:4']));
+console.log(points(['1:1', '2:2', '3:3', '4:4', '2:2', '3:3', '4:4', '3:3', '4:4', '4:4']));

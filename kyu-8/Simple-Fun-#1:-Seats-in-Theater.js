@@ -29,3 +29,5 @@
 function seatsInTheater(nCols, nRows, col, row) {
   return (nRows - row) * (nCols - (col - 1));
 }
+
+console.log(seatsInTheater(2, 2, 2, 2));

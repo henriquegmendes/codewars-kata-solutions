@@ -9,24 +9,23 @@
 // remove("!Hi",1) === "Hi"
 // remove("!Hi!",1) === "Hi!"
 // remove("!Hi!",100) === "Hi"
-// remove("!!!Hi !!hi!!! !hi",1) === "!!Hi !!hi!!! !hi"
 // remove("!!!Hi !!hi!!! !hi",3) === "Hi !!hi!!! !hi"
 // remove("!!!Hi !!hi!!! !hi",5) === "Hi hi!!! !hi"
 // remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
 
 function remove(s, n) {
-  let newWord = s;
+  const strArr = s.split('');
   let x = 0;
-  for (let i = 0; i < s.length; i += 1) {
-    if (x === n) {
-      return newWord;
+  for (let i = 0; i < strArr.length; i += 1) {
+    if (n === x) {
+      return strArr.join('');
     }
     if (s.charAt(i) === '!') {
-      newWord = newWord.replace('!', '');
+      strArr[i] = '';
       x += 1;
     }
   }
-  return newWord;
+  return strArr.join('');
 }
 
 function remove2(s, n) {

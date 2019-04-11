@@ -12,4 +12,4 @@ function litres(time) {
   return result;
 }
 
-console.log(litres(3));
+console.log(litres(5));
