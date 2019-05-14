@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // a  b  c  d  e  f  g  h  i  j  k  l  m
 //  1  2  3  4  5  6  7  8  9 10 11 12 13
 //  n  o  p  q  r  s  t  u  v  w  x  y  z
@@ -39,7 +40,7 @@ function encode(str, n) {
     newArray.push(parseInt(arr[i], 36) - 9);
   }
   for (let j = 0; j < newArray.length; j += 1) {
-    // se o counter for igual ao tamanho masimo do array que está somando ele zera para ccontinuar a soma a partir do primeiro item do array
+    // se o counter for igual ao tamanho maximo do array que está somando ele zera para ccontinuar a soma a partir do primeiro item do array
     if (counter === nArray.length) {
       counter = 0;
     }

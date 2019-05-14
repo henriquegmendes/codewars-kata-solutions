@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // Description:
 // Encrypt this!
 
@@ -14,18 +15,15 @@
 // encryptThis("hello world") === "104olle 119drlo"
 
 const encryptThis = (text) => {
-  const array = text.split(' ');
-  const result = array.map((element) => {
-    const el = element.split('');
-    if (el.length >= 3) {
-      const temp = el[1];
-      el[1] = el[el.length - 1];
-      el[el.length - 1] = temp;
+  const result = text.split(' ').map((element) => {
+    const arr = element.split('');
+    arr[0] = element.charCodeAt(0);
+    if (arr.length >= 3) {
+      const temp = arr[1];
+      arr[1] = arr[arr.length - 1];
+      arr[arr.length - 1] = temp;
     }
-    if (el[0]) {
-      el[0] = el[0].charCodeAt(0);
-    }
-    return el.join('');
+    return arr.join('');
   });
   return result.join(' ');
 };

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // INTRODUCTION
 // The Club Doorman will give you a word. To enter the Club you need to provide the right number according to provided the word.
 
@@ -28,4 +29,17 @@ function passTheDoorMan(word) {
   return (result[0].charCodeAt(0) - 96) * 3;
 }
 
+function passTheDoorMan1(word) {
+  let password = '';
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  for (let i = 0; i < word.length; i += 1) {
+    if (word[i] === word[i + 1]) {
+      password = word[i];
+      break;
+    }
+  }
+  return (alphabet.indexOf(password) + 1) * 3;
+}
+
 console.log(passTheDoorMan('lettuce'));
+console.log(passTheDoorMan1('lettuce'));

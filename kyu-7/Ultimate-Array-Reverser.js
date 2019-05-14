@@ -11,10 +11,8 @@
 // montar um novo array no mesmo tamanho do array original --- usar forEach / push / slice
 
 function ultimateReverse(s) {
-  console.log(s);
   const array = s.slice(0);
   array.reverse();
-  console.log('s', s);
   const invertedStr = array.map(n => n.split('').reverse().join('')).join('');
   const result = [];
   let x = 0;

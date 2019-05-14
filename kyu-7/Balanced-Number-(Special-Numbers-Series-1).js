@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // Definition
 // Balanced number is the number that The sum of all digits to the left of the middle digit(s) and the sum of all digits to the right of the middle digit(s) are equal.
 
@@ -49,14 +50,11 @@
 function balancedNum(number) {
   let sum1 = 0;
   let sum2 = 0;
-  const newStr = String(number);
-  const numArray = newStr.split('');
-  for (let i = 0; i <= Math.floor(numArray.length / 2); i += 1) {
-    sum1 += parseInt(numArray[i], 10);
-    sum2 += parseInt(numArray[numArray.length - i - 1], 10);
+  const newStr = number.toString();
+  for (let i = 0; i <= Math.floor(newStr.length / 2); i += 1) {
+    sum1 += parseInt(newStr[i], 10);
+    sum2 += parseInt(newStr[newStr.length - i - 1], 10);
   }
-  console.log(sum1);
-  console.log(sum2);
   if (sum1 === sum2) {
     return 'Balanced';
   }
