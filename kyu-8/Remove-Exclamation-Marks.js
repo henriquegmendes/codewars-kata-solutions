@@ -14,12 +14,27 @@
 // remove("!!!Hi !!hi!!! !hi",5) === "Hi hi!!! !hi"
 // remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
 
-function removeExclamationMarks(s) {
-  let x = s;
-  for (let i = 0; i < s.length; i += 1) {
-    x = x.replace('!', '');
+function removeExclamationMarks(string) {
+  let result = string;
+  for (let i = 0; i < result.length; i += 1) {
+    if (result.includes('!')) {
+      result = result.replace('!', '');
+    } else {
+      break;
+    }
   }
-  return s;
+  return result;
 }
 
-removeExclamationMarks();
+const removeExclamationMarks2 = (string) => {
+  const array = string.split('');
+  array.forEach((element, index) => {
+    if (element === '!') {
+      array[index] = '';
+    }
+  });
+  return array.join('');
+};
+
+console.log(removeExclamationMarks());
+console.log(removeExclamationMarks2());

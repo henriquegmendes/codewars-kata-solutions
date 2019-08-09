@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable max-len */
 // Create a function isDivisible(n, x, y) that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits.
 
 // Example:
@@ -17,4 +19,5 @@ function isDivisible2(n, x, y) {
   return false;
 }
 
+console.log(isDivisible(3, 2, 1));
 console.log(isDivisible2(3, 2, 1));

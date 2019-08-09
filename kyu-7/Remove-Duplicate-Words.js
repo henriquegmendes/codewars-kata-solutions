@@ -11,15 +11,13 @@
 // 'alpha beta gamma delta'
 
 function removeDuplicateWords(s) {
-  let x = [];
-  const y = s.split(' ');
-  for (let i = 0; i < y.length; i += 1) {
-    if (x.indexOf(y[i]) === -1) {
-      x.push(y[i]);
+  const result = [];
+  s.split(' ').forEach((element) => {
+    if (result.indexOf(element) === -1) {
+      result.push(element);
     }
-  }
-  x = x.join(' ');
-  return x;
+  });
+  return result.join(' ');
 }
 
 console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'));

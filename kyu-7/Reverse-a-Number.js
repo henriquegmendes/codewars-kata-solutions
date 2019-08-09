@@ -17,4 +17,10 @@ function reverseNumber(n) {
   return n > 0 ? parseInt(resultStr, 10) : -parseInt(resultStr, 10);
 }
 
+function reverseNumber2(n) {
+  const result = parseInt(n.toString().split('').reverse().join(''), 10);
+  return n > 0 ? result : -result;
+}
+
 console.log(reverseNumber(-123));
+console.log(reverseNumber2(-123));

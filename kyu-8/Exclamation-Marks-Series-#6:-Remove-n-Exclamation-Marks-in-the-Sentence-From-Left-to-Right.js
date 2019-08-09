@@ -15,14 +15,14 @@
 
 function remove(s, n) {
   const strArr = s.split('');
-  let x = 0;
+  let counter = 0;
   for (let i = 0; i < strArr.length; i += 1) {
-    if (n === x) {
+    if (n === counter) {
       return strArr.join('');
     }
-    if (s.charAt(i) === '!') {
+    if (strArr[i] === '!') {
       strArr[i] = '';
-      x += 1;
+      counter += 1;
     }
   }
   return strArr.join('');
