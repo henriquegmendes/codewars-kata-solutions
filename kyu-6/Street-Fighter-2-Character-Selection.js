@@ -81,15 +81,9 @@ function streetFighterSelection(fighters, position, moves) {
       if (x > 5) {
         x = 0;
       }
-      if (x < 0) {
-        x = 5;
-      }
     }
     if (element === 'left') {
       x -= 1;
-      if (x > 5) {
-        x = 0;
-      }
       if (x < 0) {
         x = 5;
       }
@@ -99,15 +93,9 @@ function streetFighterSelection(fighters, position, moves) {
       if (y > 1) {
         y = 1;
       }
-      if (y < 0) {
-        y = 0;
-      }
     }
     if (element === 'up') {
       y -= 1;
-      if (y > 1) {
-        y = 1;
-      }
       if (y < 0) {
         y = 0;
       }
@@ -117,6 +105,9 @@ function streetFighterSelection(fighters, position, moves) {
   return characters;
 }
 
-const fighterList = [['Ryu', 'E.Honda', 'Blanka', 'Guile', 'Balrog', 'Vega'], ['Ken', 'Chun Li', 'Zangief', 'Dhalsim', 'Sagat', 'M.Bison']];
+const fighterList = [
+  ['Ryu', 'E.Honda', 'Blanka', 'Guile', 'Balrog', 'Vega'],
+  ['Ken', 'Chun Li', 'Zangief', 'Dhalsim', 'Sagat', 'M.Bison'],
+];
 
 console.log(streetFighterSelection(fighterList, [0, 0], ['right', 'left', 'top', 'down', 'left']));

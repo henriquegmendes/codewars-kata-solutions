@@ -12,7 +12,19 @@
 // Note that the Java version expects a return value of null for an empty string or null.
 
 String.prototype.toJadenCase = function () {
-  return this.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ');
+  return this.split(' ').map((e, i)=> e.charAt(0).toUpperCase() + e.slice(1)).join(' ');
+};
+
+String.prototype.toJadenCase2 = function () {
+  let capString = this[0].toUpperCase();
+  for (let i = 0; i < this.length - 1; i += 1) {
+    if(this[i] === ' ') {
+      capString += this[i + 1].toUpperCase();
+    } else {
+      capString += this[i + 1];
+    }
+  }
+  return capString;
 };
 
 const str = 'henrique guazzelli mendes';

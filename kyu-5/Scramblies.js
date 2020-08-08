@@ -39,13 +39,18 @@ function scramble1(str1, str2) {
     str1Count[str1[i]] = (str1Count[str1[i]] || 0) + 1;
     str2Count[str1[i]] = 0;
   }
+  // console.log('STRING 1 COUNT ===>', str1Count)
+  // console.log('STRING 2 COUNT ===>', str2Count)
+
   for (let i = 0; i < str2.length; i += 1) {
-    str2Count[str2[i]] += 1;
-    if (str2Count[str2[i]] > str1Count[str2[i]]) {
+    str2Count[str2[i]] = (str2Count[str2[i]] || 0) + 1;
+    if (str2Count[str2[i]] > (str1Count[str2[i]] || 0)) {
       return false;
     }
   }
+  // console.log('STRING 1 COUNT ===>', str1Count)
+  // console.log('STRING 2 COUNT ===>', str2Count)
   return true;
 }
 
-console.log(scramble1('cedewaraaossoqqyt', 'codewars'));
+console.log(scramble1('cedewaraaossoqqyt', 'ccccccccodewars'));

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // You have stumbled across the divine pleasure that is owning a dog and a garden. Now time to pick up all the cr@p! :D
 
 // Given a 2D array to represent your garden, you must find and collect all of the dog cr@p - represented by '@'.
@@ -26,18 +27,11 @@ function crap(x, bags, cap) {
   let crapCount = 0;
   for (let i = 0; i < x.length; i += 1) {
     for (let j = 0; j < x[i].length; j += 1) {
-      if (x[i][j] === 'D') {
-        return 'Dog!!';
-      }
-      if (x[i][j] === '@') {
-        crapCount += 1;
-      }
+      if (x[i][j] === 'D') return 'Dog!!';
+      if (x[i][j] === '@') crapCount += 1;
     }
   }
-  if (crapCount <= bagQty) {
-    return 'Clean';
-  }
-  return 'Cr@p';
+  return crapCount <= bagQty ? 'Clean' : 'Cr@p';
 }
 
 crap([['@', '_'], ['_', '@']], 1, 2);

@@ -10,25 +10,17 @@
 // +++
 
 function generateShape(int) {
-  const array = [];
-  let string = '';
+  const square = [];
+  let squareRow = '';
   let result = '';
   for (let i = 0; i < int; i += 1) {
-    string += '+';
+    squareRow += '+';
   }
   for (let j = 0; j < int; j += 1) {
-    array.push(string);
+    square.push(squareRow);
   }
-  result = array.join('\n');
+  result = square.join('\n');
   return result;
 }
 
 console.log(generateShape(2));
-
-
-function generateShape2(int) {
-  return (`${'+'.repeat(int)}\n`).repeat(int).slice(0, -1);
-}
-
-console.log(generateShape(2));
-console.log(generateShape2(2));

@@ -11,7 +11,10 @@ function anagramCounter(wordsArray) {
   let counter = 0;
   for (let i = 0; i < wordsArray.length; i += 1) {
     for (let j = i + 1; j < wordsArray.length; j += 1) {
-      if (wordsArray[i].toLowerCase().split('').sort().join('') === wordsArray[j].toLowerCase().split('').sort().join('')) {
+      const anagram1 = wordsArray[i].toLowerCase().split('').sort().join('');
+      const anagram2 = wordsArray[j].toLowerCase().split('').sort().join('');
+
+      if (anagram1 === anagram2) {
         counter += 1;
       }
     }

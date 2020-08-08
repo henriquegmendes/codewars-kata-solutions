@@ -15,7 +15,7 @@
 
 function fib(n) {
   const sequence = [0, 1];
-  if (n <= 1) {
+  if (n <= 2) {
     return sequence[n - 1];
   }
   for (let i = 2; i <= n; i += 1) {
